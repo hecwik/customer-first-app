@@ -1,0 +1,67 @@
+.table {
+  width: 50%;
+  justify-content: center;
+  align-items: center;
+  border-collapse: collapse;
+}
+
+.table-container {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+/* Tar varannan table row och färglägger med gråaktig färg*/
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Gör så att muspekaren ändras när man hovrar över en tabellrad */
+tr:hover td {
+  cursor: pointer;
+}
+
+td, th {
+  padding: 8px;
+  border: none;
+}
+
+th {
+  background-color: #ccc;
+}
+/* Gör så att knappar blir justerade på sidan*/
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.button {
+  margin: 0 10px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  z-index: 9999;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9998;
+}
+
+#modal-content img {
+  width: 200px;
+  height: auto;
+}
