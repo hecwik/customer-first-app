@@ -123,7 +123,8 @@ function hideModal() {
 const closeButton = document.getElementById("close-button");
 closeButton.addEventListener("click", hideModal);
 
-// Hanterar paginering för föregående sida
+// Hanterar paginering för föregående sida.
+// Kollar att currentPage är större än 1. Då  decrement:ar currentpage med 1.
 function handlePreviousPage() {
   if (currentPage > 1) {
     currentPage--;
@@ -131,14 +132,15 @@ function handlePreviousPage() {
   }
 }
 
+// Hanterar paginering för nästa sida. Increment:ar currentPage.
 function handleNextPage() {
   currentPage++;
   handlePagination(currentPage);
 }
 
-// Init load page
 handlePagination(currentPage);
 
+// Skapa nästa och
 const previousPageButton = document.getElementById("previous-page-button");
 previousPageButton.addEventListener("click", handlePreviousPage);
 
