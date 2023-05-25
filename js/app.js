@@ -1,15 +1,12 @@
-/*
-1. Skapa en sida i Vanilj Javascript med ECMASCRIPT 6 syntax
-2. Hämta data från detta API https://reqres.in/api/users/
-3. Presentera datat på ett sätt som gör att användaren förstår vad listan är 
-   till för använd gärna SCSS / CSS för detta
-4. Gör varje person klickbar så att de öppnas i en modal 
-   och gör api anropet https://reqres.in/api/users/ANVÄNDARID
-5. Strukturera projektet enligt best practices, mappar, kod fördelning kommentarer etc.
-6. Lägg upp på github och skicka tillbaka
-*/
 
-// Get API data async, including pagination variables as arguments
+/*
+  Har strukturerat upp appen enligt sättet jag brukar strukturera SPA applikationer.
+  Denna blev väldigt simpel. CSS-filen är i mappen css, app.js är i mappen js. Index ligger utanför.
+  Insåg lite för sent att knapparna hamnade lite långt till höger jämfört med tabellen.
+  Rubrikerna i tabellen sitter också lite konstigt.
+ */
+
+// Get API data async, including pagination variables as arguments.
 async function fetchData(page, perPage) {
   const response = await fetch(
     `https://reqres.in/api/users?page=${page}&per_page=${perPage}`
@@ -33,13 +30,14 @@ function createTableItems(data) {
       displayModal(user);
     });
 
+    // Här skapas tabellens celler
     const idCell = document.createElement("td");
     const profileImgCell = document.createElement("td");
     const emailCell = document.createElement("td");
     const firstNameCell = document.createElement("td");
     const lastNameCell = document.createElement("td");
 
-    // Ange vad som ska visas i vilken tabell-cell.
+    // Här anges vad som ska visas i vilken tabell-cell.
     idCell.textContent = user.id;
     emailCell.textContent = user.email;
     firstNameCell.textContent = user.first_name;
@@ -97,6 +95,7 @@ function handlePagination(page) {
 function displayModal(user) {
   const modal = document.getElementById("modal");
   const modalContent = document.getElementById("modal-content");
+
   // Hämta data från API beroende på vilken user det är.
   fetch(`https://reqres.in/api/users/${user.id}`)
     .then(response => response.json())

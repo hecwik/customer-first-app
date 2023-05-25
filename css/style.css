@@ -35,10 +35,6 @@ th {
   margin-top: 10px;
 }
 
-.button {
-  margin: 0 10px;
-}
-
 .modal {
   display: none;
   position: fixed;
@@ -50,6 +46,11 @@ th {
   z-index: 9999;
 }
 
+#modal-content img {
+  width: 200px;
+  height: auto;
+}
+
 .overlay {
   display: none;
   position: fixed;
@@ -59,9 +60,4 @@ th {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 9998;
-}
-
-#modal-content img {
-  width: 200px;
-  height: auto;
 }
